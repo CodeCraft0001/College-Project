@@ -1,0 +1,56 @@
+{% extends 'base.html' %} 
+
+{% block title %} Performance {% endblock %}
+
+{% block nav_list %}
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/spiraltest">Spiral Test</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/audiotest">Audio Test</a>
+</li>
+
+
+{% endblock %} 
+{% block body %}
+
+<div class="perfor_div mt-3">
+  <h1>Image Classification Model</h1>
+
+  <div class="card-group mt-3 py-2" style="width: 400px;">
+    <div class="card">
+
+      <!--
+        
+      <img src="{{url_for('static', filename='1.png')}}" class="card-img-top pt-5" alt="notfound">
+      -->
+
+      <div class="card-body">
+        <h5 class="card-title">Analytics</h5>
+        <p class="card-text">
+          <ul class="list-group" style="padding: 10px">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              Accuracy:
+              <span class="badge bg-primary rounded-pill">{{ accuracy }}%</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              Loss:
+              <span class="badge bg-primary rounded-pill">{{ loss }}%</span>
+            </li>
+          </ul>
+        </p>
+        
+      </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

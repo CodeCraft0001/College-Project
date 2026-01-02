@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block nav_list %}
+    
+    {% if user|length > 0 %}
+
+    <li class="nav-item">
+        <a class="nav-link" href="/spiraltest">Spiral Test</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/audiotest">Audio Test</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/performance">Performance</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="/logout">Log Out</a>
+    </li>
+
+
+    {% else %}
+
+    <li class="nav-item">
+        <a class="nav-link" href="/login">Log In</a>
+    </li>
+
+    
+    {% endif %}
+    
+
+{% endblock %}
+
+
+{% block body %}
+
+
+
+<main class="mt-5 py-4">
+
+    {% if s %}
+    <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Login {{s}}!</strong>
+    </div>
+    {% endif %}
+
+    {% if us %}
+
+    <div class="alert alert-warning alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Login {{us}}!</strong> Please Check Email and Password.
+    </div>
+    {% endif %}
+
+    {% if lg %}
+
+    <div class="alert alert-success alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Login Required !!</strong>
+    </div>
+    
+    {% endif %}
+
+    <section class="title_home mt-5 pt-5 ">
+        <div class="d-flex justify-content-center my-auto">
+            <div class="text-center ">
+                <h2 class="fw-bolder">Parkinson Disease Prediction</h2>
+                <p class="fs-5">Classification of Parkinson's disease using audio and image datasets.</p>
+            </div>
+        </div>
+    </section>
+
+    
+</main>
+
+<footer class=" py-5">
+    <p>&copy; 2023 Deep Learning Project - Parkinson Disease Detection</p>
+</footer>
+
+
+
+{% endblock %}

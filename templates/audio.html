@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Audio Test{% endblock %}
+
+{% block nav_list %}
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/spiraltest">Spiral Test</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/performance">Performance</a>
+    </li>
+    
+
+{% endblock %}
+
+{% block body %}
+
+
+
+
+
+<form method="POST" class ="mb-3 inputfile align-middle" action="/audiotest" enctype="multipart/form-data">
+
+
+    <h1>Upload Audio to Test: </h1>
+    <label for="formFile" class="form-label">Input audio File</label>
+    <input class="form-control mb-4" type="file" id="name" name="audio">
+    <button class="btn btn-dark" type="submit" >Test</button>
+</form>
+
+{% if prediction %}
+
+    <div class="loader pred_div ">
+        <h3>Prediction Result : 
+            {% if prediction == 'Parkinson' %}
+            <span style="color : red;" >{{ prediction }}</span>
+            {% else %}
+            <span style="color : green;" >{{ prediction }}</span>
+            {% endif %}           
+        </h3>
+
+    </div>
+{% endif %}
+
+
+
+{% endblock %}
